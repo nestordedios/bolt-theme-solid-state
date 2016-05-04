@@ -1,5 +1,4 @@
 ## Solid State by HTML5UP
-===================
 
 ![Preview](screenshots/screenshot2.PNG)
 
