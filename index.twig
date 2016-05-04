@@ -1,0 +1,98 @@
+{% extends 'master.twig' %}
+
+{% block headerClass %}class="alt"{% endblock headerClass %}
+
+{% block banner %}
+<!-- Banner -->
+    <section id="banner">
+        <div class="inner">
+            <div class="logo"><span class="icon fa-diamond"></span></div>
+            <h2>This is Solid State</h2>
+            <p>Another free + fully responsive site template by <a href="http://html5up.net">HTML5 UP</a></p>
+        </div>
+    </section>
+{% endblock banner %}
+
+{% block content %}
+
+    {% setcontent lastThreePages = 'pages/latest/3' %}
+    {% for page in lastThreePages %}
+
+        {% if loop.first %}
+
+        <!-- One -->
+            <section id="one" class="wrapper spotlight style1">
+                <div class="inner">
+                    {% if page.image is not empty %}
+                        {{ page.image|popup(276, 276, "r") }}
+                    {% endif %}
+                    <div class="content">
+                        <h2 class="major">{{ page.title }}</h2>
+                        <p>{{ page.teaser }}</p>
+                        <a href="{{ page.link }}" class="special">Learn more</a>
+                    </div>
+                </div>
+            </section>
+
+        {% elseif loop.last %}
+
+        <!-- Three -->
+            <section id="three" class="wrapper spotlight style3">
+                <div class="inner">
+                    {% if page.image is not empty %}
+                        {{ page.image|popup(276, 276, "r") }}
+                    {% endif %}
+                    <div class="content">
+                        <h2 class="major">{{ page.title }}</h2>
+                        <p>{{ page.teaser }}</p>
+                        <a href="{{ page.link }}" class="special">Learn more</a>
+                    </div>
+                </div>
+            </section>
+
+        {% else %}
+
+        <!-- Two -->
+            <section id="two" class="wrapper alt spotlight style2">
+                <div class="inner">
+                    {% if page.image is not empty %}
+                        {{ page.image|popup(276, 276, "r") }}
+                    {% endif %}
+                    <div class="content">
+                        <h2 class="major">{{ page.title }}</h2>
+                        <p>{{ page.teaser }}</p>
+                        <a href="{{ page.link }}" class="special">Learn more</a>
+                    </div>
+                </div>
+            </section>
+
+        {% endif %}
+
+    {% endfor %}
+
+    {% setcontent news = 'news/latest/4' %}
+    <!-- Four -->
+        <section id="four" class="wrapper alt style1">
+            <div class="inner">
+                <h2 class="major">Vitae phasellus</h2>
+                <p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
+                <section class="features">
+
+                    {% for item in news %}
+                        <article>
+                            <a class="image"><img src="{{ item.image|thumbnail(572, 333, "c") }}" alt="" /></a>
+                            <h3 class="major">{{ item.title }}</h3>
+                            <p>{{ item.teaser }}</p>
+                            <a href="{{ item.link }}" class="special">Learn more</a>
+                        </article>
+                    {% endfor %}
+
+                </section>
+                <ul class="actions">
+                    <li><a href="pages/" class="button">Browse All</a></li>
+                </ul>
+            </div>
+        </section>
+
+
+{% endblock content %}
