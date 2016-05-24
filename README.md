@@ -6,6 +6,8 @@
 
 This is Solid State theme designed by HTML5UP and adapted for Bolt.
 
+**Note:**  This is for Bolt 3. Check out the `bolt-v2` branch for a Bolt 2 compatible version.
+
 ### Configuration
 
 You can easily start using Solid State theme for Bolt just by setting `theme: solid-state` in your config.yml file.
